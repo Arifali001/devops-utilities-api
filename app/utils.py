@@ -24,7 +24,7 @@ def get_memory_info():
 
 
 def get_disk_info():
-    disk = psutil.disk_usage("C:\\")
+    disk = psutil.disk_usage("/")
 
     return {
         "total_gb": round(disk.total / (1024 ** 3), 2),
