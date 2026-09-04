@@ -37,3 +37,18 @@ def get_cpu_info():
         "cpu_usage_percent": psutil.cpu_percent(interval=1),
         "cpu_count": psutil.cpu_count()
     }
+def get_processes_info():
+    processes = []
+
+    for process in psutil.process_iter(["pid", "name", "cpu_percent", "memory_percent"]):
+        try:
+            processes.append({
+                "pid": process.info["pid"],
+                "name": process.info["name"],
+                "cpu_percent": process.info["cpu_percent"],
+                "memory_percent": round(process.info["memory_percent"], 2)
+            })
+        except (psutil.NoSuchProcess, psutil.AccessDenied):
+            continue
+
+    return processes[:20]
