@@ -105,11 +105,19 @@ http://<EC2-PUBLIC-IP>:8000/docs
 
 Swagger UI can be used to view and test all API endpoints directly from the browser.
 
-## 📸 Screenshots
+## Screenshots
 
 ### Swagger API
 
 ![Swagger API](screenshots/swagger-api.png)
+
+### Health Check
+
+![Health Check](screenshots/health-check.png)
+
+### System Information
+
+![System Information](screenshots/system-info.png)
 
 ### CPU Usage
 
